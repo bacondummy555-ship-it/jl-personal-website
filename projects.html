@@ -9,10 +9,7 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-
-  <!-- ======================================
-       PRIMARY SEO
-  ======================================= -->
+  <!-- SEO -->
 
   <title>Projects | JL Ibanez</title>
 
@@ -36,20 +33,12 @@
     content="#050608"
   />
 
-
-  <!-- ======================================
-       CANONICAL
-  ======================================= -->
-
   <link
     rel="canonical"
-    href="https://yourdomain.com/projects.html"
+    href="https://jl-personal-website-ten.vercel.app/projects.html"
   />
 
-
-  <!-- ======================================
-       OPEN GRAPH
-  ======================================= -->
+  <!-- OPEN GRAPH -->
 
   <meta
     property="og:type"
@@ -73,12 +62,22 @@
 
   <meta
     property="og:url"
-    content="https://yourdomain.com/projects.html"
+    content="https://jl-personal-website-ten.vercel.app/projects.html"
   />
 
   <meta
     property="og:image"
-    content="https://yourdomain.com/assets/og-preview.jpg"
+    content="https://jl-personal-website-ten.vercel.app/assets/og-preview.jpg"
+  />
+
+  <meta
+    property="og:image:secure_url"
+    content="https://jl-personal-website-ten.vercel.app/assets/og-preview.jpg"
+  />
+
+  <meta
+    property="og:image:type"
+    content="image/jpeg"
   />
 
   <meta
@@ -96,10 +95,7 @@
     content="JL Ibanez project portfolio"
   />
 
-
-  <!-- ======================================
-       TWITTER / X
-  ======================================= -->
+  <!-- TWITTER / X -->
 
   <meta
     name="twitter:card"
@@ -118,24 +114,18 @@
 
   <meta
     name="twitter:image"
-    content="https://yourdomain.com/assets/og-preview.jpg"
+    content="https://jl-personal-website-ten.vercel.app/assets/og-preview.jpg"
   />
 
-
-  <!-- ======================================
-       FAVICON
-  ======================================= -->
+  <!-- FAVICON -->
 
   <link
     rel="icon"
-    type="image/png"
+    type="image/jpeg"
     href="assets/profile.jpg"
   />
 
-
-  <!-- ======================================
-       STRUCTURED DATA
-  ======================================= -->
+  <!-- STRUCTURED DATA -->
 
   <script type="application/ld+json">
   {
@@ -143,19 +133,14 @@
     "@type": "CollectionPage",
     "name": "Projects | JL Ibanez",
     "description": "A collection of websites, games, Discord bots, tools, and development experiments by JL Ibanez.",
-    "url": "https://yourdomain.com/projects.html",
+    "url": "https://jl-personal-website-ten.vercel.app/projects.html",
     "author": {
       "@type": "Person",
       "name": "JL Ibanez",
-      "url": "https://yourdomain.com/"
+      "url": "https://jl-personal-website-ten.vercel.app/"
     }
   }
   </script>
-
-
-  <!-- ======================================
-       FONTS
-  ======================================= -->
 
   <link
     rel="preconnect"
@@ -173,7 +158,6 @@
     rel="stylesheet"
   />
 
-
   <link
     rel="stylesheet"
     href="projects.css"
@@ -182,11 +166,6 @@
 </head>
 
 <body>
-
-
-  <!-- ======================================
-       BACKGROUND
-  ======================================= -->
 
   <div class="background">
 
@@ -200,23 +179,17 @@
 
   </div>
 
-
-  <!-- ======================================
-       HEADER
-  ======================================= -->
-
   <header class="header">
 
     <a
       href="index.html"
       class="logo"
-      aria-label="Return to JL homepage"
+      aria-label="Return home"
     >
       JL<span>.</span>
     </a>
 
-
-    <nav aria-label="Projects navigation">
+    <nav>
 
       <a href="index.html">
         Home
@@ -233,12 +206,7 @@
 
   </header>
 
-
   <main>
-
-    <!-- ======================================
-         HERO
-    ======================================= -->
 
     <section class="projects-hero">
 
@@ -249,11 +217,9 @@
         ← Back Home
       </a>
 
-
       <p class="eyebrow">
         PROJECT ARCHIVE
       </p>
-
 
       <h1>
 
@@ -265,7 +231,6 @@
 
       </h1>
 
-
       <p class="hero-description">
         Websites, games, bots, tools, experiments,
         and other projects I've created while learning
@@ -273,11 +238,6 @@
       </p>
 
     </section>
-
-
-    <!-- ======================================
-         PROJECT BROWSER
-    ======================================= -->
 
     <section class="project-browser">
 
@@ -298,7 +258,6 @@
 
         </div>
 
-
         <div class="project-count">
 
           <span id="projectCount">
@@ -310,7 +269,6 @@
         </div>
 
       </div>
-
 
       <div
         class="filter-buttons"
@@ -324,14 +282,12 @@
           All
         </button>
 
-
         <button
           class="filter"
           data-filter="website"
         >
           Websites
         </button>
-
 
         <button
           class="filter"
@@ -340,14 +296,12 @@
           Games
         </button>
 
-
         <button
           class="filter"
           data-filter="bot"
         >
           Bots
         </button>
-
 
         <button
           class="filter"
@@ -358,12 +312,10 @@
 
       </div>
 
-
       <div
         class="projects-grid"
         id="projectsGrid"
       ></div>
-
 
       <div
         class="no-results"
@@ -374,11 +326,9 @@
           ⌕
         </div>
 
-
         <h2>
           No projects found
         </h2>
-
 
         <p>
           Try another search or category.
@@ -389,11 +339,6 @@
     </section>
 
   </main>
-
-
-  <!-- ======================================
-       FOOTER
-  ======================================= -->
 
   <footer>
 
@@ -407,10 +352,7 @@
 
   </footer>
 
-
-  <!-- ======================================
-       PROJECT MODAL
-  ======================================= -->
+  <!-- MODAL -->
 
   <div
     class="modal"
@@ -422,7 +364,6 @@
       id="modalBackdrop"
     ></div>
 
-
     <div class="modal-container">
 
       <button
@@ -433,7 +374,6 @@
         ×
       </button>
 
-
       <div class="modal-image">
 
         <img
@@ -441,7 +381,6 @@
           alt=""
           id="modalImage"
         />
-
 
         <div
           class="modal-placeholder"
@@ -452,7 +391,6 @@
 
       </div>
 
-
       <div class="modal-content">
 
         <p
@@ -462,17 +400,14 @@
           CATEGORY
         </p>
 
-
         <h2 id="modalTitle">
           Project
         </h2>
-
 
         <p
           class="modal-description"
           id="modalDescription"
         ></p>
-
 
         <div class="modal-meta">
 
@@ -488,7 +423,6 @@
 
           </div>
 
-
           <div>
 
             <span>
@@ -503,13 +437,11 @@
 
         </div>
 
-
         <div class="modal-section">
 
           <p class="modal-label">
             TECHNOLOGIES
           </p>
-
 
           <div
             class="modal-tags"
@@ -518,20 +450,17 @@
 
         </div>
 
-
         <div class="modal-section">
 
           <p class="modal-label">
             FEATURES
           </p>
 
-
           <ul
             id="modalFeatures"
           ></ul>
 
         </div>
-
 
         <div class="modal-actions">
 
@@ -543,7 +472,6 @@
           >
             Live Demo ↗
           </a>
-
 
           <a
             href="#"
@@ -561,7 +489,6 @@
     </div>
 
   </div>
-
 
   <script src="projects.js"></script>
 
