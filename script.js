@@ -58,7 +58,6 @@ const starsContainer =
     "stars"
   );
 
-
 // ========================================
 // CURRENT YEAR
 // ========================================
@@ -75,15 +74,13 @@ if (yearElement) {
 
 }
 
-
 // ========================================
-// LOADING SCREEN
+// LOADER
 // ========================================
 
 body.classList.add(
   "loading"
 );
-
 
 window.addEventListener(
   "load",
@@ -106,7 +103,6 @@ window.addEventListener(
 
   }
 );
-
 
 // ========================================
 // HEADER
@@ -133,15 +129,12 @@ function updateHeader() {
 
 }
 
-
 window.addEventListener(
   "scroll",
   updateHeader
 );
 
-
 updateHeader();
-
 
 // ========================================
 // MOBILE MENU
@@ -157,7 +150,6 @@ menuBtn.addEventListener(
 
   }
 );
-
 
 navLinks.forEach(
   link => {
@@ -176,7 +168,6 @@ navLinks.forEach(
   }
 );
 
-
 // ========================================
 // ACTIVE NAVIGATION
 // ========================================
@@ -186,7 +177,6 @@ function updateNavigation() {
   let current =
     "home";
 
-
   sections.forEach(
     section => {
 
@@ -194,11 +184,9 @@ function updateNavigation() {
         section.offsetTop -
         220;
 
-
       const bottom =
         top +
         section.offsetHeight;
-
 
       if (
         window.scrollY >=
@@ -215,14 +203,12 @@ function updateNavigation() {
     }
   );
 
-
   navLinks.forEach(
     link => {
 
       link.classList.remove(
         "active"
       );
-
 
       if (
         link.getAttribute(
@@ -242,15 +228,12 @@ function updateNavigation() {
 
 }
 
-
 window.addEventListener(
   "scroll",
   updateNavigation
 );
 
-
 updateNavigation();
-
 
 // ========================================
 // TYPING EFFECT
@@ -264,23 +247,17 @@ const roles = [
   "Student"
 ];
 
-
 let roleIndex = 0;
-
 let letterIndex = 0;
-
 let deleting = false;
-
 
 typingText.textContent =
   "";
-
 
 function typeText() {
 
   const current =
     roles[roleIndex];
-
 
   if (
     !deleting
@@ -292,9 +269,7 @@ function typeText() {
         letterIndex + 1
       );
 
-
     letterIndex++;
-
 
     if (
       letterIndex ===
@@ -303,12 +278,10 @@ function typeText() {
 
       deleting = true;
 
-
       setTimeout(
         typeText,
         1300
       );
-
 
       return;
 
@@ -322,9 +295,7 @@ function typeText() {
         letterIndex - 1
       );
 
-
     letterIndex--;
-
 
     if (
       letterIndex ===
@@ -332,7 +303,6 @@ function typeText() {
     ) {
 
       deleting = false;
-
 
       roleIndex =
         (
@@ -344,7 +314,6 @@ function typeText() {
 
   }
 
-
   setTimeout(
     typeText,
     deleting
@@ -354,12 +323,10 @@ function typeText() {
 
 }
 
-
 setTimeout(
   typeText,
   1600
 );
-
 
 // ========================================
 // CURSOR GLOW
@@ -377,17 +344,14 @@ document.addEventListener(
 
     }
 
-
     cursorGlow.style.left =
       `${event.clientX}px`;
-
 
     cursorGlow.style.top =
       `${event.clientY}px`;
 
   }
 );
-
 
 // ========================================
 // PROFILE CARD 3D
@@ -410,21 +374,17 @@ if (
 
       }
 
-
       const rect =
         profileCard
           .getBoundingClientRect();
-
 
       const x =
         event.clientX -
         rect.left;
 
-
       const y =
         event.clientY -
         rect.top;
-
 
       const rotateY =
         (
@@ -438,7 +398,6 @@ if (
         ) *
         5;
 
-
       const rotateX =
         (
           (
@@ -451,7 +410,6 @@ if (
         ) *
         -5;
 
-
       profileCard.style.transform =
         `
         perspective(1000px)
@@ -462,7 +420,6 @@ if (
 
     }
   );
-
 
   profileCard.addEventListener(
     "mouseleave",
@@ -476,9 +433,8 @@ if (
 
 }
 
-
 // ========================================
-// REVEAL ANIMATIONS
+// REVEAL
 // ========================================
 
 const revealItems =
@@ -492,7 +448,6 @@ const revealItems =
     `
   );
 
-
 revealItems.forEach(
   item => {
 
@@ -502,7 +457,6 @@ revealItems.forEach(
 
   }
 );
-
 
 const revealObserver =
   new IntersectionObserver(
@@ -520,7 +474,6 @@ const revealObserver =
                 "visible"
               );
 
-
             revealObserver
               .unobserve(
                 entry.target
@@ -537,7 +490,6 @@ const revealObserver =
     }
   );
 
-
 revealItems.forEach(
   item => {
 
@@ -548,7 +500,6 @@ revealItems.forEach(
   }
 );
 
-
 // ========================================
 // SKILL BARS
 // ========================================
@@ -557,7 +508,6 @@ const skillBars =
   document.querySelectorAll(
     ".skill-progress"
   );
-
 
 const skillObserver =
   new IntersectionObserver(
@@ -574,16 +524,13 @@ const skillObserver =
 
           }
 
-
           const width =
             entry.target
               .dataset.width;
 
-
           entry.target
             .style.width =
               `${width}%`;
-
 
           skillObserver
             .unobserve(
@@ -599,7 +546,6 @@ const skillObserver =
     }
   );
 
-
 skillBars.forEach(
   bar => {
 
@@ -610,9 +556,8 @@ skillBars.forEach(
   }
 );
 
-
 // ========================================
-// BACKGROUND STARS
+// STARS
 // ========================================
 
 function createStars() {
@@ -625,13 +570,11 @@ function createStars() {
 
   }
 
-
   const amount =
     window.innerWidth <
     700
       ? 25
       : 55;
-
 
   for (
     let i = 0;
@@ -644,32 +587,25 @@ function createStars() {
         "span"
       );
 
-
     star.className =
       "star";
-
 
     const size =
       Math.random() *
       1.5 +
       0.5;
 
-
     star.style.width =
       `${size}px`;
-
 
     star.style.height =
       `${size}px`;
 
-
     star.style.left =
       `${Math.random() * 100}%`;
 
-
     star.style.top =
       `${Math.random() * 100}%`;
-
 
     star.style.animationDuration =
       `${
@@ -678,13 +614,11 @@ function createStars() {
         3
       }s`;
 
-
     star.style.animationDelay =
       `${
         Math.random() *
         4
       }s`;
-
 
     starsContainer
       .appendChild(
@@ -695,12 +629,10 @@ function createStars() {
 
 }
 
-
 createStars();
 
-
 // ========================================
-// PROJECT IMAGE FALLBACK
+// IMAGE FALLBACK
 // ========================================
 
 document
@@ -722,7 +654,6 @@ document
 
     }
   );
-
 
 // ========================================
 // EMPTY LINKS
@@ -747,9 +678,8 @@ document
     }
   );
 
-
 // ========================================
-// HELPER: GO TO SECTION
+// GO TO SECTION
 // ========================================
 
 function goToSection(
@@ -761,7 +691,6 @@ function goToSection(
       id
     );
 
-
   if (
     !section
   ) {
@@ -769,7 +698,6 @@ function goToSection(
     return;
 
   }
-
 
   section.scrollIntoView({
     behavior:
@@ -780,9 +708,8 @@ function goToSection(
 
 }
 
-
 // ========================================
-// COMMAND PALETTE
+// COMMAND PALETTE ELEMENTS
 // ========================================
 
 const commandPalette =
@@ -810,698 +737,14 @@ const commandResults =
     "commandResults"
   );
 
-
 let selectedCommandIndex =
   0;
-
 
 let visibleCommands =
   [];
 
-
 // ========================================
-// PALETTE COMMANDS
-// ========================================
-
-const paletteCommands = [
-
-  {
-    icon:
-      "⌂",
-
-    title:
-      "Home",
-
-    description:
-      "Return to the top of the website",
-
-    keywords:
-      "home start top main",
-
-    action:
-      () => {
-
-        goToSection(
-          "home"
-        );
-
-      }
-  },
-
-
-  {
-    icon:
-      "◉",
-
-    title:
-      "About Me",
-
-    description:
-      "Learn more about who I am",
-
-    keywords:
-      "about profile jl iban ez biography",
-
-    action:
-      () => {
-
-        goToSection(
-          "about"
-        );
-
-      }
-  },
-
-
-  {
-    icon:
-      "◆",
-
-    title:
-      "Featured Projects",
-
-    description:
-      "Jump to my featured projects",
-
-    keywords:
-      "projects work portfolio websites games bots",
-
-    action:
-      () => {
-
-        goToSection(
-          "projects"
-        );
-
-      }
-  },
-
-
-  {
-    icon:
-      "↗",
-
-    title:
-      "All Projects",
-
-    description:
-      "Open the full project archive",
-
-    keywords:
-      "all projects archive portfolio work",
-
-    action:
-      () => {
-
-        window.location.href =
-          "projects.html";
-
-      }
-  },
-
-
-  {
-    icon:
-      "⌘",
-
-    title:
-      "Skills",
-
-    description:
-      "See the technologies and tools I use",
-
-    keywords:
-      "skills html css javascript python vscode github",
-
-    action:
-      () => {
-
-        goToSection(
-          "skills"
-        );
-
-      }
-  },
-
-
-  {
-    icon:
-      "✉",
-
-    title:
-      "Contact",
-
-    description:
-      "Jump to the contact section",
-
-    keywords:
-      "contact email message collaborate",
-
-    action:
-      () => {
-
-        goToSection(
-          "contact"
-        );
-
-      }
-  },
-
-
-  {
-    icon:
-      ">_",
-
-    title:
-      "Developer Terminal",
-
-    description:
-      "Open the interactive JL.DEV terminal",
-
-    keywords:
-      "terminal console developer command shell",
-
-    action:
-      () => {
-
-        openTerminal();
-
-      }
-  }
-
-];
-
-
-// ========================================
-// RENDER COMMANDS
-// ========================================
-
-function renderCommands() {
-
-  const query =
-    commandInput.value
-      .trim()
-      .toLowerCase();
-
-
-  visibleCommands =
-    paletteCommands.filter(
-      command => {
-
-        const searchable =
-          `
-          ${command.title}
-          ${command.description}
-          ${command.keywords}
-          `
-          .toLowerCase();
-
-
-        return searchable
-          .includes(
-            query
-          );
-
-      }
-    );
-
-
-  if (
-    selectedCommandIndex >=
-    visibleCommands.length
-  ) {
-
-    selectedCommandIndex =
-      0;
-
-  }
-
-
-  commandResults.innerHTML =
-    "";
-
-
-  if (
-    visibleCommands.length ===
-    0
-  ) {
-
-    const empty =
-      document.createElement(
-        "div"
-      );
-
-
-    empty.className =
-      "command-empty";
-
-
-    empty.textContent =
-      "No commands found.";
-
-
-    commandResults
-      .appendChild(
-        empty
-      );
-
-
-    return;
-
-  }
-
-
-  visibleCommands.forEach(
-    (
-      command,
-      index
-    ) => {
-
-      const button =
-        document.createElement(
-          "button"
-        );
-
-
-      button.className =
-        "command-item";
-
-
-      if (
-        index ===
-        selectedCommandIndex
-      ) {
-
-        button.classList.add(
-          "selected"
-        );
-
-      }
-
-
-      button.innerHTML =
-        `
-        <span class="command-item-icon">
-          ${command.icon}
-        </span>
-
-        <span class="command-item-copy">
-
-          <span class="command-item-title">
-            ${command.title}
-          </span>
-
-          <span class="command-item-description">
-            ${command.description}
-          </span>
-
-        </span>
-
-        <span class="command-item-arrow">
-          →
-        </span>
-        `;
-
-
-      button.addEventListener(
-        "mouseenter",
-        () => {
-
-          selectedCommandIndex =
-            index;
-
-
-          updateSelectedCommand();
-
-        }
-      );
-
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          runSelectedCommand(
-            index
-          );
-
-        }
-      );
-
-
-      commandResults
-        .appendChild(
-          button
-        );
-
-    }
-  );
-
-}
-
-
-// ========================================
-// UPDATE SELECTED PALETTE ITEM
-// ========================================
-
-function updateSelectedCommand() {
-
-  const items =
-    commandResults
-      .querySelectorAll(
-        ".command-item"
-      );
-
-
-  items.forEach(
-    (
-      item,
-      index
-    ) => {
-
-      item.classList.toggle(
-        "selected",
-        index ===
-        selectedCommandIndex
-      );
-
-    }
-  );
-
-
-  const selected =
-    items[
-      selectedCommandIndex
-    ];
-
-
-  if (
-    selected
-  ) {
-
-    selected.scrollIntoView({
-      block:
-        "nearest"
-    });
-
-  }
-
-}
-
-
-// ========================================
-// OPEN PALETTE
-// ========================================
-
-function openCommandPalette() {
-
-  closeTerminal();
-
-
-  commandPalette
-    .classList.add(
-      "open"
-    );
-
-
-  commandPalette
-    .setAttribute(
-      "aria-hidden",
-      "false"
-    );
-
-
-  body.classList.add(
-    "overlay-open"
-  );
-
-
-  commandInput.value =
-    "";
-
-
-  selectedCommandIndex =
-    0;
-
-
-  renderCommands();
-
-
-  setTimeout(
-    () => {
-
-      commandInput.focus();
-
-    },
-    50
-  );
-
-}
-
-
-// ========================================
-// CLOSE PALETTE
-// ========================================
-
-function closeCommandPalette() {
-
-  commandPalette
-    .classList.remove(
-      "open"
-    );
-
-
-  commandPalette
-    .setAttribute(
-      "aria-hidden",
-      "true"
-    );
-
-
-  if (
-    !terminalOverlay
-      .classList
-      .contains(
-        "open"
-      )
-  ) {
-
-    body.classList.remove(
-      "overlay-open"
-    );
-
-  }
-
-}
-
-
-// ========================================
-// RUN PALETTE COMMAND
-// ========================================
-
-function runSelectedCommand(
-  index =
-    selectedCommandIndex
-) {
-
-  const command =
-    visibleCommands[
-      index
-    ];
-
-
-  if (
-    !command
-  ) {
-
-    return;
-
-  }
-
-
-  closeCommandPalette();
-
-
-  setTimeout(
-    () => {
-
-      command.action();
-
-    },
-    80
-  );
-
-}
-
-
-// ========================================
-// PALETTE EVENTS
-// ========================================
-
-commandTrigger
-  .addEventListener(
-    "click",
-    openCommandPalette
-  );
-
-
-commandBackdrop
-  .addEventListener(
-    "click",
-    closeCommandPalette
-  );
-
-
-commandInput
-  .addEventListener(
-    "input",
-    () => {
-
-      selectedCommandIndex =
-        0;
-
-
-      renderCommands();
-
-    }
-  );
-
-
-commandInput
-  .addEventListener(
-    "keydown",
-    event => {
-
-      if (
-        event.key ===
-        "ArrowDown"
-      ) {
-
-        event.preventDefault();
-
-
-        if (
-          visibleCommands.length
-        ) {
-
-          selectedCommandIndex =
-            (
-              selectedCommandIndex +
-              1
-            ) %
-            visibleCommands.length;
-
-
-          updateSelectedCommand();
-
-        }
-
-      }
-
-
-      if (
-        event.key ===
-        "ArrowUp"
-      ) {
-
-        event.preventDefault();
-
-
-        if (
-          visibleCommands.length
-        ) {
-
-          selectedCommandIndex =
-            (
-              selectedCommandIndex -
-              1 +
-              visibleCommands.length
-            ) %
-            visibleCommands.length;
-
-
-          updateSelectedCommand();
-
-        }
-
-      }
-
-
-      if (
-        event.key ===
-        "Enter"
-      ) {
-
-        event.preventDefault();
-
-
-        runSelectedCommand();
-
-      }
-
-
-      if (
-        event.key ===
-        "Escape"
-      ) {
-
-        closeCommandPalette();
-
-      }
-
-    }
-  );
-
-
-// ========================================
-// GLOBAL CTRL/CMD + K
-// ========================================
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    const isCommandShortcut =
-      (
-        event.ctrlKey ||
-        event.metaKey
-      ) &&
-      event.key
-        .toLowerCase() ===
-        "k";
-
-
-    if (
-      isCommandShortcut
-    ) {
-
-      event.preventDefault();
-
-
-      if (
-        commandPalette
-          .classList
-          .contains(
-            "open"
-          )
-      ) {
-
-        closeCommandPalette();
-
-      } else {
-
-        openCommandPalette();
-
-      }
-
-    }
-
-  }
-);
-
-
-// ========================================
-// DEVELOPER TERMINAL ELEMENTS
+// TERMINAL ELEMENTS
 // ========================================
 
 const terminalOverlay =
@@ -1539,33 +782,18 @@ const terminalInput =
     "terminalInput"
   );
 
-
 // ========================================
-// TERMINAL HISTORY
-// ========================================
-
-let terminalHistory =
-  [];
-
-
-let terminalHistoryIndex =
-  0;
-
-
-// ========================================
-// OPEN TERMINAL
+// OPEN / CLOSE TERMINAL
 // ========================================
 
 function openTerminal() {
 
   closeCommandPalette();
 
-
   terminalOverlay
     .classList.add(
       "open"
     );
-
 
   terminalOverlay
     .setAttribute(
@@ -1573,17 +801,14 @@ function openTerminal() {
       "false"
     );
 
-
   body.classList.add(
     "overlay-open"
   );
-
 
   setTimeout(
     () => {
 
       terminalInput.focus();
-
 
       scrollTerminalBottom();
 
@@ -1592,11 +817,6 @@ function openTerminal() {
   );
 
 }
-
-
-// ========================================
-// CLOSE TERMINAL
-// ========================================
 
 function closeTerminal() {
 
@@ -1608,19 +828,16 @@ function closeTerminal() {
 
   }
 
-
   terminalOverlay
     .classList.remove(
       "open"
     );
-
 
   terminalOverlay
     .setAttribute(
       "aria-hidden",
       "true"
     );
-
 
   if (
     !commandPalette
@@ -1638,9 +855,631 @@ function closeTerminal() {
 
 }
 
+// ========================================
+// PALETTE COMMANDS
+// ========================================
+
+const paletteCommands = [
+
+  {
+    icon:
+      "⌂",
+
+    title:
+      "Home",
+
+    description:
+      "Return to the top of the website",
+
+    keywords:
+      "home start top main",
+
+    action:
+      () => {
+
+        goToSection(
+          "home"
+        );
+
+      }
+  },
+
+  {
+    icon:
+      "◉",
+
+    title:
+      "About Me",
+
+    description:
+      "Learn more about who I am",
+
+    keywords:
+      "about profile biography",
+
+    action:
+      () => {
+
+        goToSection(
+          "about"
+        );
+
+      }
+  },
+
+  {
+    icon:
+      "◆",
+
+    title:
+      "Featured Projects",
+
+    description:
+      "Jump to my featured projects",
+
+    keywords:
+      "projects work portfolio websites games bots",
+
+    action:
+      () => {
+
+        goToSection(
+          "projects"
+        );
+
+      }
+  },
+
+  {
+    icon:
+      "↗",
+
+    title:
+      "All Projects",
+
+    description:
+      "Open the full project archive",
+
+    keywords:
+      "all projects archive portfolio",
+
+    action:
+      () => {
+
+        window.location.href =
+          "projects.html";
+
+      }
+  },
+
+  {
+    icon:
+      "⌘",
+
+    title:
+      "Skills",
+
+    description:
+      "See the technologies and tools I use",
+
+    keywords:
+      "skills html css javascript python vscode github",
+
+    action:
+      () => {
+
+        goToSection(
+          "skills"
+        );
+
+      }
+  },
+
+  {
+    icon:
+      "✉",
+
+    title:
+      "Contact",
+
+    description:
+      "Jump to the contact section",
+
+    keywords:
+      "contact email message collaborate",
+
+    action:
+      () => {
+
+        goToSection(
+          "contact"
+        );
+
+      }
+  },
+
+  {
+    icon:
+      ">_",
+
+    title:
+      "Developer Terminal",
+
+    description:
+      "Open the interactive JL.DEV terminal",
+
+    keywords:
+      "terminal console developer command shell",
+
+    action:
+      () => {
+
+        openTerminal();
+
+      }
+  }
+
+];
 
 // ========================================
-// TERMINAL OUTPUT HELPERS
+// RENDER COMMANDS
+// ========================================
+
+function renderCommands() {
+
+  const query =
+    commandInput.value
+      .trim()
+      .toLowerCase();
+
+  visibleCommands =
+    paletteCommands.filter(
+      command => {
+
+        const searchable =
+          `
+          ${command.title}
+          ${command.description}
+          ${command.keywords}
+          `
+          .toLowerCase();
+
+        return searchable
+          .includes(
+            query
+          );
+
+      }
+    );
+
+  if (
+    selectedCommandIndex >=
+    visibleCommands.length
+  ) {
+
+    selectedCommandIndex =
+      0;
+
+  }
+
+  commandResults.innerHTML =
+    "";
+
+  if (
+    visibleCommands.length ===
+    0
+  ) {
+
+    const empty =
+      document.createElement(
+        "div"
+      );
+
+    empty.className =
+      "command-empty";
+
+    empty.textContent =
+      "No commands found.";
+
+    commandResults
+      .appendChild(
+        empty
+      );
+
+    return;
+
+  }
+
+  visibleCommands.forEach(
+    (
+      command,
+      index
+    ) => {
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+      button.className =
+        "command-item";
+
+      if (
+        index ===
+        selectedCommandIndex
+      ) {
+
+        button.classList.add(
+          "selected"
+        );
+
+      }
+
+      button.innerHTML =
+        `
+        <span class="command-item-icon">
+          ${command.icon}
+        </span>
+
+        <span class="command-item-copy">
+
+          <span class="command-item-title">
+            ${command.title}
+          </span>
+
+          <span class="command-item-description">
+            ${command.description}
+          </span>
+
+        </span>
+
+        <span class="command-item-arrow">
+          →
+        </span>
+        `;
+
+      button.addEventListener(
+        "mouseenter",
+        () => {
+
+          selectedCommandIndex =
+            index;
+
+          updateSelectedCommand();
+
+        }
+      );
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          runSelectedCommand(
+            index
+          );
+
+        }
+      );
+
+      commandResults
+        .appendChild(
+          button
+        );
+
+    }
+  );
+
+}
+
+// ========================================
+// UPDATE SELECTED COMMAND
+// ========================================
+
+function updateSelectedCommand() {
+
+  const items =
+    commandResults
+      .querySelectorAll(
+        ".command-item"
+      );
+
+  items.forEach(
+    (
+      item,
+      index
+    ) => {
+
+      item.classList.toggle(
+        "selected",
+        index ===
+        selectedCommandIndex
+      );
+
+    }
+  );
+
+  const selected =
+    items[
+      selectedCommandIndex
+    ];
+
+  if (
+    selected
+  ) {
+
+    selected.scrollIntoView({
+      block:
+        "nearest"
+    });
+
+  }
+
+}
+
+// ========================================
+// OPEN / CLOSE PALETTE
+// ========================================
+
+function openCommandPalette() {
+
+  closeTerminal();
+
+  commandPalette
+    .classList.add(
+      "open"
+    );
+
+  commandPalette
+    .setAttribute(
+      "aria-hidden",
+      "false"
+    );
+
+  body.classList.add(
+    "overlay-open"
+  );
+
+  commandInput.value =
+    "";
+
+  selectedCommandIndex =
+    0;
+
+  renderCommands();
+
+  setTimeout(
+    () => {
+
+      commandInput.focus();
+
+    },
+    50
+  );
+
+}
+
+function closeCommandPalette() {
+
+  commandPalette
+    .classList.remove(
+      "open"
+    );
+
+  commandPalette
+    .setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+  if (
+    !terminalOverlay
+      .classList
+      .contains(
+        "open"
+      )
+  ) {
+
+    body.classList.remove(
+      "overlay-open"
+    );
+
+  }
+
+}
+
+function runSelectedCommand(
+  index =
+    selectedCommandIndex
+) {
+
+  const command =
+    visibleCommands[
+      index
+    ];
+
+  if (
+    !command
+  ) {
+
+    return;
+
+  }
+
+  closeCommandPalette();
+
+  setTimeout(
+    () => {
+
+      command.action();
+
+    },
+    80
+  );
+
+}
+
+// ========================================
+// PALETTE EVENTS
+// ========================================
+
+commandTrigger
+  .addEventListener(
+    "click",
+    openCommandPalette
+  );
+
+commandBackdrop
+  .addEventListener(
+    "click",
+    closeCommandPalette
+  );
+
+commandInput
+  .addEventListener(
+    "input",
+    () => {
+
+      selectedCommandIndex =
+        0;
+
+      renderCommands();
+
+    }
+  );
+
+commandInput
+  .addEventListener(
+    "keydown",
+    event => {
+
+      if (
+        event.key ===
+        "ArrowDown"
+      ) {
+
+        event.preventDefault();
+
+        if (
+          visibleCommands.length
+        ) {
+
+          selectedCommandIndex =
+            (
+              selectedCommandIndex +
+              1
+            ) %
+            visibleCommands.length;
+
+          updateSelectedCommand();
+
+        }
+
+      }
+
+      if (
+        event.key ===
+        "ArrowUp"
+      ) {
+
+        event.preventDefault();
+
+        if (
+          visibleCommands.length
+        ) {
+
+          selectedCommandIndex =
+            (
+              selectedCommandIndex -
+              1 +
+              visibleCommands.length
+            ) %
+            visibleCommands.length;
+
+          updateSelectedCommand();
+
+        }
+
+      }
+
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
+        event.preventDefault();
+
+        runSelectedCommand();
+
+      }
+
+      if (
+        event.key ===
+        "Escape"
+      ) {
+
+        closeCommandPalette();
+
+      }
+
+    }
+  );
+
+// ========================================
+// CTRL + K
+// ========================================
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    const shortcut =
+      (
+        event.ctrlKey ||
+        event.metaKey
+      ) &&
+      event.key
+        .toLowerCase() ===
+        "k";
+
+    if (
+      shortcut
+    ) {
+
+      event.preventDefault();
+
+      if (
+        commandPalette
+          .classList
+          .contains(
+            "open"
+          )
+      ) {
+
+        closeCommandPalette();
+
+      } else {
+
+        openCommandPalette();
+
+      }
+
+    }
+
+  }
+);
+
+// ========================================
+// TERMINAL HISTORY
+// ========================================
+
+let terminalHistory =
+  [];
+
+let terminalHistoryIndex =
+  0;
+
+// ========================================
+// TERMINAL HELPERS
 // ========================================
 
 function scrollTerminalBottom() {
@@ -1649,7 +1488,6 @@ function scrollTerminalBottom() {
     terminalBody.scrollHeight;
 
 }
-
 
 function appendTerminalText(
   text,
@@ -1662,28 +1500,23 @@ function appendTerminalText(
       "div"
     );
 
-
   line.className =
     `
     terminal-entry
     ${className}
     `;
 
-
   line.textContent =
     text;
-
 
   terminalOutput
     .appendChild(
       line
     );
 
-
   scrollTerminalBottom();
 
 }
-
 
 function appendTerminalCommand(
   command
@@ -1694,44 +1527,35 @@ function appendTerminalCommand(
       "div"
     );
 
-
   line.className =
     "terminal-entry terminal-command-line";
-
 
   const symbol =
     document.createElement(
       "span"
     );
 
-
   symbol.className =
     "terminal-command-symbol";
 
-
   symbol.textContent =
     "visitor@jl.dev:~$ ";
-
 
   const text =
     document.createElement(
       "span"
     );
 
-
   text.textContent =
     command;
-
 
   line.appendChild(
     symbol
   );
 
-
   line.appendChild(
     text
   );
-
 
   terminalOutput
     .appendChild(
@@ -1740,9 +1564,8 @@ function appendTerminalCommand(
 
 }
 
-
 // ========================================
-// WEBSITE THEMES
+// THEMES
 // ========================================
 
 const themes = {
@@ -1755,7 +1578,6 @@ const themes = {
       "#2ec8ff"
   },
 
-
   red: {
     primary:
       "#ff475f",
@@ -1763,7 +1585,6 @@ const themes = {
     secondary:
       "#ff8a45"
   },
-
 
   blue: {
     primary:
@@ -1773,7 +1594,6 @@ const themes = {
       "#36d6ff"
   },
 
-
   green: {
     primary:
       "#3ed98a",
@@ -1781,7 +1601,6 @@ const themes = {
     secondary:
       "#46ffd1"
   },
-
 
   gold: {
     primary:
@@ -1792,11 +1611,6 @@ const themes = {
   }
 
 };
-
-
-// ========================================
-// APPLY THEME
-// ========================================
 
 function applyTheme(
   themeName,
@@ -1809,7 +1623,6 @@ function applyTheme(
       themeName
     ];
 
-
   if (
     !theme
   ) {
@@ -1818,18 +1631,15 @@ function applyTheme(
 
   }
 
-
   root.style.setProperty(
     "--purple",
     theme.primary
   );
 
-
   root.style.setProperty(
     "--blue",
     theme.secondary
   );
-
 
   if (
     themeName !==
@@ -1842,7 +1652,6 @@ function applyTheme(
 
   }
 
-
   if (
     save
   ) {
@@ -1854,21 +1663,14 @@ function applyTheme(
 
   }
 
-
   return true;
 
 }
-
-
-// ========================================
-// LOAD SAVED THEME
-// ========================================
 
 const savedTheme =
   localStorage.getItem(
     "jl-theme"
   );
-
 
 if (
   savedTheme &&
@@ -1884,9 +1686,8 @@ if (
 
 }
 
-
 // ========================================
-// TERMINAL COMMAND HANDLER
+// TERMINAL COMMANDS
 // ========================================
 
 function executeTerminalCommand(
@@ -1896,7 +1697,6 @@ function executeTerminalCommand(
   const trimmed =
     rawCommand.trim();
 
-
   if (
     !trimmed
   ) {
@@ -1905,43 +1705,35 @@ function executeTerminalCommand(
 
   }
 
-
   appendTerminalCommand(
     trimmed
   );
-
 
   terminalHistory.push(
     trimmed
   );
 
-
   terminalHistoryIndex =
     terminalHistory.length;
-
 
   const parts =
     trimmed.split(
       /\s+/
     );
 
-
   const command =
     parts[0]
       .toLowerCase();
-
 
   const args =
     parts.slice(
       1
     );
 
-
   switch (
     command
   ) {
 
-    // HELP
     case "help":
 
       appendTerminalText(
@@ -1971,8 +1763,6 @@ exit                   Close the terminal`
 
       break;
 
-
-    // WHOAMI
     case "whoami":
 
       appendTerminalText(
@@ -1987,8 +1777,6 @@ Status: Building new projects`
 
       break;
 
-
-    // ABOUT
     case "about":
 
       appendTerminalText(
@@ -1996,12 +1784,10 @@ Status: Building new projects`
         "terminal-success"
       );
 
-
       setTimeout(
         () => {
 
           closeTerminal();
-
 
           goToSection(
             "about"
@@ -2013,8 +1799,6 @@ Status: Building new projects`
 
       break;
 
-
-    // PROJECTS
     case "projects":
 
       appendTerminalText(
@@ -2022,12 +1806,10 @@ Status: Building new projects`
         "terminal-success"
       );
 
-
       setTimeout(
         () => {
 
           closeTerminal();
-
 
           goToSection(
             "projects"
@@ -2039,15 +1821,12 @@ Status: Building new projects`
 
       break;
 
-
-    // ALL PROJECTS
     case "allprojects":
 
       appendTerminalText(
         "Opening project archive...",
         "terminal-success"
       );
-
 
       setTimeout(
         () => {
@@ -2061,8 +1840,6 @@ Status: Building new projects`
 
       break;
 
-
-    // SKILLS
     case "skills":
 
       appendTerminalText(
@@ -2070,12 +1847,10 @@ Status: Building new projects`
         "terminal-success"
       );
 
-
       setTimeout(
         () => {
 
           closeTerminal();
-
 
           goToSection(
             "skills"
@@ -2087,8 +1862,6 @@ Status: Building new projects`
 
       break;
 
-
-    // CONTACT
     case "contact":
 
       appendTerminalText(
@@ -2096,12 +1869,10 @@ Status: Building new projects`
         "terminal-success"
       );
 
-
       setTimeout(
         () => {
 
           closeTerminal();
-
 
           goToSection(
             "contact"
@@ -2113,8 +1884,6 @@ Status: Building new projects`
 
       break;
 
-
-    // HOME
     case "home":
 
       appendTerminalText(
@@ -2122,12 +1891,10 @@ Status: Building new projects`
         "terminal-success"
       );
 
-
       setTimeout(
         () => {
 
           closeTerminal();
-
 
           goToSection(
             "home"
@@ -2139,8 +1906,6 @@ Status: Building new projects`
 
       break;
 
-
-    // CLEAR
     case "clear":
 
       terminalOutput.innerHTML =
@@ -2148,8 +1913,6 @@ Status: Building new projects`
 
       break;
 
-
-    // DATE
     case "date":
 
       appendTerminalText(
@@ -2159,8 +1922,6 @@ Status: Building new projects`
 
       break;
 
-
-    // ECHO
     case "echo":
 
       appendTerminalText(
@@ -2171,8 +1932,6 @@ Status: Building new projects`
 
       break;
 
-
-    // THEME
     case "theme":
 
       if (
@@ -2192,16 +1951,13 @@ Example:
 theme red`
         );
 
-
         break;
 
       }
 
-
       const themeName =
         args[0]
           .toLowerCase();
-
 
       if (
         applyTheme(
@@ -2225,15 +1981,12 @@ theme red`
 
       break;
 
-
-    // MATRIX
     case "matrix":
 
       const matrixEnabled =
         body.classList.toggle(
           "matrix-mode"
         );
-
 
       if (
         matrixEnabled
@@ -2242,7 +1995,6 @@ theme red`
         applyTheme(
           "green"
         );
-
 
         appendTerminalText(
           "Matrix mode enabled.",
@@ -2255,7 +2007,6 @@ theme red`
           "purple"
         );
 
-
         appendTerminalText(
           "Matrix mode disabled.",
           "terminal-info"
@@ -2265,8 +2016,6 @@ theme red`
 
       break;
 
-
-    // PALETTE
     case "palette":
 
       appendTerminalText(
@@ -2274,12 +2023,10 @@ theme red`
         "terminal-success"
       );
 
-
       setTimeout(
         () => {
 
           closeTerminal();
-
 
           openCommandPalette();
 
@@ -2289,23 +2036,18 @@ theme red`
 
       break;
 
-
-    // EXIT
     case "exit":
 
       closeTerminal();
 
       break;
 
-
-    // DEFAULT
     default:
 
       appendTerminalText(
         `Command not found: ${command}`,
         "terminal-error"
       );
-
 
       appendTerminalText(
         'Type "help" to see available commands.'
@@ -2315,11 +2057,9 @@ theme red`
 
   }
 
-
   scrollTerminalBottom();
 
 }
-
 
 // ========================================
 // TERMINAL INPUT
@@ -2329,7 +2069,6 @@ terminalInput.addEventListener(
   "keydown",
   event => {
 
-    // ENTER
     if (
       event.key ===
       "Enter"
@@ -2338,10 +2077,8 @@ terminalInput.addEventListener(
       const command =
         terminalInput.value;
 
-
       terminalInput.value =
         "";
-
 
       executeTerminalCommand(
         command
@@ -2349,15 +2086,12 @@ terminalInput.addEventListener(
 
     }
 
-
-    // HISTORY UP
     if (
       event.key ===
       "ArrowUp"
     ) {
 
       event.preventDefault();
-
 
       if (
         terminalHistory.length ===
@@ -2367,7 +2101,6 @@ terminalInput.addEventListener(
         return;
 
       }
-
 
       terminalHistoryIndex =
         Math.max(
@@ -2376,7 +2109,6 @@ terminalInput.addEventListener(
           1
         );
 
-
       terminalInput.value =
         terminalHistory[
           terminalHistoryIndex
@@ -2384,15 +2116,12 @@ terminalInput.addEventListener(
 
     }
 
-
-    // HISTORY DOWN
     if (
       event.key ===
       "ArrowDown"
     ) {
 
       event.preventDefault();
-
 
       if (
         terminalHistory.length ===
@@ -2403,14 +2132,12 @@ terminalInput.addEventListener(
 
       }
 
-
       terminalHistoryIndex =
         Math.min(
           terminalHistory.length,
           terminalHistoryIndex +
           1
         );
-
 
       if (
         terminalHistoryIndex ===
@@ -2434,7 +2161,6 @@ terminalInput.addEventListener(
   }
 );
 
-
 // ========================================
 // TERMINAL EVENTS
 // ========================================
@@ -2445,20 +2171,17 @@ terminalTrigger
     openTerminal
   );
 
-
 terminalClose
   .addEventListener(
     "click",
     closeTerminal
   );
 
-
 terminalBackdrop
   .addEventListener(
     "click",
     closeTerminal
   );
-
 
 terminalBody
   .addEventListener(
@@ -2470,9 +2193,8 @@ terminalBody
     }
   );
 
-
 // ========================================
-// GLOBAL ESCAPE
+// ESCAPE
 // ========================================
 
 document.addEventListener(
@@ -2488,7 +2210,6 @@ document.addEventListener(
 
     }
 
-
     if (
       terminalOverlay
         .classList
@@ -2499,11 +2220,9 @@ document.addEventListener(
 
       closeTerminal();
 
-
       return;
 
     }
-
 
     if (
       commandPalette
