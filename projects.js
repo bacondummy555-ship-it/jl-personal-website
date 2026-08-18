@@ -1,7 +1,3 @@
-// ========================================
-// PROJECT DATA
-// ========================================
-
 const projects = [
 
   {
@@ -35,7 +31,7 @@ const projects = [
       "A modern personal portfolio website built to showcase my profile, skills, projects, and digital work.",
 
     fullDescription:
-      "A modern portfolio website designed as my personal digital space. It includes responsive layouts, animated sections, project showcases, interactive components, and a futuristic visual style.",
+      "A modern portfolio website designed as my personal digital space. It includes responsive layouts, animated sections, project showcases, interactive components, a command palette, developer terminal, and a futuristic visual style.",
 
     technologies: [
       "HTML",
@@ -47,18 +43,19 @@ const projects = [
       "Responsive design",
       "Animated loading screen",
       "Interactive profile card",
+      "Command palette",
+      "Developer terminal",
       "Project showcase",
       "Skill animations",
-      "Smooth navigation"
+      "Social preview and SEO"
     ],
 
     github:
       "#",
 
     live:
-      "#"
+      "https://jl-personal-website-ten.vercel.app/"
   },
-
 
   {
     id: 2,
@@ -116,7 +113,6 @@ const projects = [
       "#"
   },
 
-
   {
     id: 3,
 
@@ -173,7 +169,6 @@ const projects = [
       "#"
   },
 
-
   {
     id: 4,
 
@@ -228,7 +223,6 @@ const projects = [
     live:
       "#"
   },
-
 
   {
     id: 5,
@@ -285,7 +279,6 @@ const projects = [
     live:
       "#"
   },
-
 
   {
     id: 6,
@@ -345,11 +338,6 @@ const projects = [
 
 ];
 
-
-// ========================================
-// ELEMENTS
-// ========================================
-
 const projectsGrid =
   document.getElementById(
     "projectsGrid"
@@ -390,18 +378,8 @@ const modalBackdrop =
     "modalBackdrop"
   );
 
-
-// ========================================
-// CURRENT FILTER
-// ========================================
-
 let currentFilter =
   "all";
-
-
-// ========================================
-// CREATE PROJECT CARD
-// ========================================
 
 function createProjectCard(
   project
@@ -412,10 +390,8 @@ function createProjectCard(
       "article"
     );
 
-
   card.className =
     "project-card";
-
 
   const tags =
     project.technologies
@@ -425,7 +401,6 @@ function createProjectCard(
           `<span>${tech}</span>`
       )
       .join("");
-
 
   card.innerHTML =
     `
@@ -476,8 +451,9 @@ function createProjectCard(
 
           <a
             href="${project.github}"
-            class="icon-button empty-link"
+            class="icon-button project-external-link"
             target="_blank"
+            rel="noopener noreferrer"
             title="GitHub"
           >
             GH
@@ -485,8 +461,9 @@ function createProjectCard(
 
           <a
             href="${project.live}"
-            class="icon-button empty-link"
+            class="icon-button project-external-link"
             target="_blank"
+            rel="noopener noreferrer"
             title="Live Demo"
           >
             ↗
@@ -497,15 +474,9 @@ function createProjectCard(
       </div>
     `;
 
-
   return card;
 
 }
-
-
-// ========================================
-// RENDER PROJECTS
-// ========================================
 
 function renderProjects() {
 
@@ -513,7 +484,6 @@ function renderProjects() {
     projectSearch.value
       .toLowerCase()
       .trim();
-
 
   const filtered =
     projects.filter(
@@ -524,7 +494,6 @@ function renderProjects() {
           project.category ===
           currentFilter;
 
-
         const searchable =
           `
           ${project.title}
@@ -534,12 +503,10 @@ function renderProjects() {
           `
           .toLowerCase();
 
-
         const matchesSearch =
           searchable.includes(
             searchValue
           );
-
 
         return (
           matchesCategory &&
@@ -549,10 +516,8 @@ function renderProjects() {
       }
     );
 
-
   projectsGrid.innerHTML =
     "";
-
 
   filtered.forEach(
     project => {
@@ -566,34 +531,17 @@ function renderProjects() {
     }
   );
 
-
   projectCount.textContent =
     filtered.length;
 
-
-  if (
+  noResults.style.display =
     filtered.length === 0
-  ) {
-
-    noResults.style.display =
-      "block";
-
-  } else {
-
-    noResults.style.display =
-      "none";
-
-  }
-
+      ? "block"
+      : "none";
 
   setupProjectButtons();
 
 }
-
-
-// ========================================
-// FILTER BUTTONS
-// ========================================
 
 filterButtons.forEach(
   button => {
@@ -612,15 +560,12 @@ filterButtons.forEach(
           }
         );
 
-
         button.classList.add(
           "active"
         );
 
-
         currentFilter =
           button.dataset.filter;
-
 
         renderProjects();
 
@@ -630,20 +575,10 @@ filterButtons.forEach(
   }
 );
 
-
-// ========================================
-// SEARCH
-// ========================================
-
 projectSearch.addEventListener(
   "input",
   renderProjects
 );
-
-
-// ========================================
-// MODAL ELEMENTS
-// ========================================
 
 const modalImage =
   document.getElementById(
@@ -700,11 +635,6 @@ const modalLive =
     "modalLive"
   );
 
-
-// ========================================
-// OPEN MODAL
-// ========================================
-
 function openModal(
   id
 ) {
@@ -715,37 +645,34 @@ function openModal(
         project.id === id
     );
 
+  if (
+    !project
+  ) {
 
-  if (!project) return;
+    return;
 
+  }
 
   modalTitle.textContent =
     project.title;
 
-
   modalCategory.textContent =
     project.categoryLabel;
-
 
   modalDescription.textContent =
     project.fullDescription;
 
-
   modalStatus.textContent =
     project.status;
-
 
   modalYear.textContent =
     project.year;
 
-
   modalPlaceholder.textContent =
     project.icon;
 
-
   modalTags.innerHTML =
     "";
-
 
   project.technologies.forEach(
     tech => {
@@ -755,10 +682,8 @@ function openModal(
           "span"
         );
 
-
       span.textContent =
         tech;
-
 
       modalTags.appendChild(
         span
@@ -767,10 +692,8 @@ function openModal(
     }
   );
 
-
   modalFeatures.innerHTML =
     "";
-
 
   project.features.forEach(
     feature => {
@@ -780,10 +703,8 @@ function openModal(
           "li"
         );
 
-
       item.textContent =
         feature;
-
 
       modalFeatures.appendChild(
         item
@@ -792,18 +713,14 @@ function openModal(
     }
   );
 
-
   modalImage.style.display =
     "block";
-
 
   modalImage.src =
     project.image;
 
-
   modalImage.alt =
     project.title;
-
 
   modalImage.onerror =
     () => {
@@ -813,19 +730,15 @@ function openModal(
 
     };
 
-
   modalGithub.href =
     project.github;
-
 
   modalLive.href =
     project.live;
 
-
   modal.classList.add(
     "open"
   );
-
 
   document.body.classList.add(
     "modal-open"
@@ -833,28 +746,17 @@ function openModal(
 
 }
 
-
-// ========================================
-// CLOSE MODAL
-// ========================================
-
 function closeModal() {
 
   modal.classList.remove(
     "open"
   );
 
-
   document.body.classList.remove(
     "modal-open"
   );
 
 }
-
-
-// ========================================
-// SETUP BUTTONS
-// ========================================
 
 function setupProjectButtons() {
 
@@ -881,10 +783,9 @@ function setupProjectButtons() {
       }
     );
 
-
   document
     .querySelectorAll(
-      ".empty-link"
+      ".project-external-link"
     )
     .forEach(
       link => {
@@ -911,29 +812,23 @@ function setupProjectButtons() {
 
 }
 
-
-// ========================================
-// CLOSE EVENTS
-// ========================================
-
 modalClose.addEventListener(
   "click",
   closeModal
 );
-
 
 modalBackdrop.addEventListener(
   "click",
   closeModal
 );
 
-
 document.addEventListener(
   "keydown",
   event => {
 
     if (
-      event.key === "Escape"
+      event.key ===
+      "Escape"
     ) {
 
       closeModal();
@@ -943,26 +838,15 @@ document.addEventListener(
   }
 );
 
-
-// ========================================
-// YEAR
-// ========================================
-
 document.getElementById(
   "year"
 ).textContent =
   new Date().getFullYear();
 
-
-// ========================================
-// STARS
-// ========================================
-
 const stars =
   document.getElementById(
     "stars"
   );
-
 
 for (
   let i = 0;
@@ -975,40 +859,30 @@ for (
       "span"
     );
 
-
   star.className =
     "star";
 
-
   const size =
-    Math.random() * 1.5 + 0.5;
-
+    Math.random() *
+    1.5 +
+    0.5;
 
   star.style.width =
     `${size}px`;
 
-
   star.style.height =
     `${size}px`;
-
 
   star.style.left =
     `${Math.random() * 100}%`;
 
-
   star.style.top =
     `${Math.random() * 100}%`;
-
 
   stars.appendChild(
     star
   );
 
 }
-
-
-// ========================================
-// INITIAL LOAD
-// ========================================
 
 renderProjects();
