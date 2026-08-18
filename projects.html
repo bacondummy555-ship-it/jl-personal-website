@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+
+  <!-- ======================================
+       PRIMARY SEO
+  ======================================= -->
+
+  <title>Projects | JL Ibanez</title>
+
+  <meta
+    name="description"
+    content="Explore projects built by JL Ibanez, including websites, browser games, Discord bots, development tools, and experiments."
+  />
+
+  <meta
+    name="author"
+    content="JL Ibanez"
+  />
+
+  <meta
+    name="robots"
+    content="index, follow"
+  />
+
+  <meta
+    name="theme-color"
+    content="#050608"
+  />
+
+
+  <!-- ======================================
+       CANONICAL
+  ======================================= -->
+
+  <link
+    rel="canonical"
+    href="https://yourdomain.com/projects.html"
+  />
+
+
+  <!-- ======================================
+       OPEN GRAPH
+  ======================================= -->
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:site_name"
+    content="JL.DEV"
+  />
+
+  <meta
+    property="og:title"
+    content="Projects | JL Ibanez"
+  />
+
+  <meta
+    property="og:description"
+    content="Explore websites, games, Discord bots, tools, and experiments created by JL Ibanez."
+  />
+
+  <meta
+    property="og:url"
+    content="https://yourdomain.com/projects.html"
+  />
+
+  <meta
+    property="og:image"
+    content="https://yourdomain.com/assets/og-preview.jpg"
+  />
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  />
+
+  <meta
+    property="og:image:height"
+    content="630"
+  />
+
+  <meta
+    property="og:image:alt"
+    content="JL Ibanez project portfolio"
+  />
+
+
+  <!-- ======================================
+       TWITTER / X
+  ======================================= -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content="Projects | JL Ibanez"
+  />
+
+  <meta
+    name="twitter:description"
+    content="Explore websites, games, Discord bots, tools, and experiments created by JL Ibanez."
+  />
+
+  <meta
+    name="twitter:image"
+    content="https://yourdomain.com/assets/og-preview.jpg"
+  />
+
+
+  <!-- ======================================
+       FAVICON
+  ======================================= -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/profile.jpg"
+  />
+
+
+  <!-- ======================================
+       STRUCTURED DATA
+  ======================================= -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Projects | JL Ibanez",
+    "description": "A collection of websites, games, Discord bots, tools, and development experiments by JL Ibanez.",
+    "url": "https://yourdomain.com/projects.html",
+    "author": {
+      "@type": "Person",
+      "name": "JL Ibanez",
+      "url": "https://yourdomain.com/"
+    }
+  }
+  </script>
+
+
+  <!-- ======================================
+       FONTS
+  ======================================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+
+  <link
+    rel="stylesheet"
+    href="projects.css"
+  />
+
+</head>
+
+<body>
+
+
+  <!-- ======================================
+       BACKGROUND
+  ======================================= -->
+
+  <div class="background">
+
+    <div class="grid"></div>
+
+    <div class="glow glow-one"></div>
+
+    <div class="glow glow-two"></div>
+
+    <div id="stars"></div>
+
+  </div>
+
+
+  <!-- ======================================
+       HEADER
+  ======================================= -->
+
+  <header class="header">
+
+    <a
+      href="index.html"
+      class="logo"
+      aria-label="Return to JL homepage"
+    >
+      JL<span>.</span>
+    </a>
+
+
+    <nav aria-label="Projects navigation">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a
+        href="projects.html"
+        class="active"
+      >
+        Projects
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- ======================================
+         HERO
+    ======================================= -->
+
+    <section class="projects-hero">
+
+      <a
+        href="index.html"
+        class="back-link"
+      >
+        ← Back Home
+      </a>
+
+
+      <p class="eyebrow">
+        PROJECT ARCHIVE
+      </p>
+
+
+      <h1>
+
+        Things I've
+
+        <span>
+          built.
+        </span>
+
+      </h1>
+
+
+      <p class="hero-description">
+        Websites, games, bots, tools, experiments,
+        and other projects I've created while learning
+        and exploring technology.
+      </p>
+
+    </section>
+
+
+    <!-- ======================================
+         PROJECT BROWSER
+    ======================================= -->
+
+    <section class="project-browser">
+
+      <div class="project-toolbar">
+
+        <div class="search-box">
+
+          <span>
+            ⌕
+          </span>
+
+          <input
+            type="text"
+            id="projectSearch"
+            placeholder="Search projects..."
+            aria-label="Search projects"
+          />
+
+        </div>
+
+
+        <div class="project-count">
+
+          <span id="projectCount">
+            0
+          </span>
+
+          projects
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="filter-buttons"
+        id="filterButtons"
+      >
+
+        <button
+          class="filter active"
+          data-filter="all"
+        >
+          All
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="website"
+        >
+          Websites
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="game"
+        >
+          Games
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="bot"
+        >
+          Bots
+        </button>
+
+
+        <button
+          class="filter"
+          data-filter="tool"
+        >
+          Tools
+        </button>
+
+      </div>
+
+
+      <div
+        class="projects-grid"
+        id="projectsGrid"
+      ></div>
+
+
+      <div
+        class="no-results"
+        id="noResults"
+      >
+
+        <div>
+          ⌕
+        </div>
+
+
+        <h2>
+          No projects found
+        </h2>
+
+
+        <p>
+          Try another search or category.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ======================================
+       FOOTER
+  ======================================= -->
+
+  <footer>
+
+    <p>
+      © <span id="year"></span> JL IBANEZ
+    </p>
+
+    <a href="index.html">
+      Back Home ↑
+    </a>
+
+  </footer>
+
+
+  <!-- ======================================
+       PROJECT MODAL
+  ======================================= -->
+
+  <div
+    class="modal"
+    id="projectModal"
+  >
+
+    <div
+      class="modal-backdrop"
+      id="modalBackdrop"
+    ></div>
+
+
+    <div class="modal-container">
+
+      <button
+        class="modal-close"
+        id="modalClose"
+        aria-label="Close project details"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-image">
+
+        <img
+          src=""
+          alt=""
+          id="modalImage"
+        />
+
+
+        <div
+          class="modal-placeholder"
+          id="modalPlaceholder"
+        >
+          🌐
+        </div>
+
+      </div>
+
+
+      <div class="modal-content">
+
+        <p
+          class="modal-category"
+          id="modalCategory"
+        >
+          CATEGORY
+        </p>
+
+
+        <h2 id="modalTitle">
+          Project
+        </h2>
+
+
+        <p
+          class="modal-description"
+          id="modalDescription"
+        ></p>
+
+
+        <div class="modal-meta">
+
+          <div>
+
+            <span>
+              STATUS
+            </span>
+
+            <strong id="modalStatus">
+              Live
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              YEAR
+            </span>
+
+            <strong id="modalYear">
+              2026
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-section">
+
+          <p class="modal-label">
+            TECHNOLOGIES
+          </p>
+
+
+          <div
+            class="modal-tags"
+            id="modalTags"
+          ></div>
+
+        </div>
+
+
+        <div class="modal-section">
+
+          <p class="modal-label">
+            FEATURES
+          </p>
+
+
+          <ul
+            id="modalFeatures"
+          ></ul>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+          <a
+            href="#"
+            target="_blank"
+            class="primary-button"
+            id="modalLive"
+          >
+            Live Demo ↗
+          </a>
+
+
+          <a
+            href="#"
+            target="_blank"
+            class="secondary-button"
+            id="modalGithub"
+          >
+            GitHub ↗
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="projects.js"></script>
+
+</body>
+</html>
